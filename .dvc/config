@@ -1,0 +1,7 @@
+[core]
+    analytics = false
+    autostage = true
+
+[cache]
+    dir = .dvc/cache
+    type = copy

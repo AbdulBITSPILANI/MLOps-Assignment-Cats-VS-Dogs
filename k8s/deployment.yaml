@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cats-dogs-inference
+  labels:
+    app: cats-dogs-inference
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cats-dogs-inference
+  template:
+    metadata:
+      labels:
+        app: cats-dogs-inference
+        version: v1
+    spec:
+      containers:
+      - name: inference
+        image: yourusername/cats-dogs-mlops:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MODEL_PATH
+          value: "/app/models/best_model.pth"
+        - name: DEVICE
+          value: "cpu"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        volumeMounts:
+        - name: model-volume
+          mountPath: /app/models
+          readOnly: true
+      volumes:
+      - name: model-volume
+        persistentVolumeClaim:
+          claimName: model-pvc
+      restartPolicy: Always

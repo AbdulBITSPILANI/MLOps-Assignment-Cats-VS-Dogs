@@ -1,0 +1,638 @@
+{
+  "last_updated": "2026-02-21T21:06:12.079084",
+  "total_predictions": 79,
+  "predictions": [
+    {
+      "timestamp": "2026-02-21T19:17:22.081576",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:22.773953",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:23.484040",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:24.135969",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:24.822450",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:25.539308",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:26.225982",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:26.906629",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:27.586811",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:28.276967",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:34.835358",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:35.544991",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:36.205925",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:36.870376",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:37.527028",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:17:38.219594",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:38.894707",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:39.573286",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:40.249716",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:17:40.908528",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:38:22.724104",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:38:23.337519",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:38:23.990304",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:38:24.601164",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:38:25.221107",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T19:38:25.829814",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:38:26.434784",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:38:27.072101",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:38:27.680895",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T19:38:28.292714",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:09:58.519851",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:09:59.116841",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:09:59.721410",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:10:00.335753",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:10:00.934529",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:10:01.551638",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:10:02.152069",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:10:02.774177",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:10:03.378914",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:10:03.977059",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:15:31.356703",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:15:31.950593",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:15:32.542626",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:15:33.148157",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:15:33.728564",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:15:34.329178",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:15:34.930631",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:15:35.538138",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:15:36.141674",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:15:36.763229",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:16:43.162321",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:16:43.745229",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:16:44.329522",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:16:44.912136",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:16:45.517716",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:16:46.119342",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:16:46.719871",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:16:47.329479",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:16:47.909683",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:16:48.507024",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:41:45.904584",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:41:46.506678",
+      "image_path": "data\\processed\\test\\cat\\cat_0013.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.6515998840332031,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:41:47.115753",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:41:47.718532",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:41:48.318018",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T20:41:48.936884",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:41:49.540337",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:41:50.158120",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:41:50.859532",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T20:41:51.547455",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T21:05:36.944309",
+      "image_path": "data\\processed\\test\\cat\\cat_0001.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8993933796882629,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T21:06:07.648538",
+      "image_path": "data\\processed\\test\\cat\\cat_0020.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.816161572933197,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T21:06:08.273556",
+      "image_path": "data\\processed\\test\\cat\\cat_0021.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8440653085708618,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T21:06:08.894321",
+      "image_path": "data\\processed\\test\\cat\\cat_0034.jpg",
+      "predicted_class": "cat",
+      "actual_class": "cat",
+      "confidence": 0.8916146159172058,
+      "correct": true
+    },
+    {
+      "timestamp": "2026-02-21T21:06:09.531366",
+      "image_path": "data\\processed\\test\\dog\\dog_0004.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7496913075447083,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T21:06:10.155154",
+      "image_path": "data\\processed\\test\\dog\\dog_0012.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7827177047729492,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T21:06:10.823499",
+      "image_path": "data\\processed\\test\\dog\\dog_0014.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7307107448577881,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T21:06:11.460911",
+      "image_path": "data\\processed\\test\\dog\\dog_0022.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.7363348007202148,
+      "correct": false
+    },
+    {
+      "timestamp": "2026-02-21T21:06:12.079084",
+      "image_path": "data\\processed\\test\\dog\\dog_0038.jpg",
+      "predicted_class": "cat",
+      "actual_class": "dog",
+      "confidence": 0.6347265243530273,
+      "correct": false
+    }
+  ]
+}

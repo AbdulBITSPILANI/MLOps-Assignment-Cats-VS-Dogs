@@ -1,0 +1,34 @@
+# DVC pipeline configuration
+stages:
+  prepare:
+    cmd: python src/data/preprocessing.py --config config.json
+    deps:
+    - src/data/preprocessing.py
+    - config.json
+    params:
+    - target_size
+    - test_size
+    - val_size
+    outs:
+    - data/processed:
+        cache: true
+        persist: true
+  
+  train:
+    cmd: python src/training/train.py --config config.json
+    deps:
+    - src/training/train.py
+    - src/models/cnn_model.py
+    - data/processed
+    params:
+    - num_epochs
+    - learning_rate
+    - weight_decay
+    - batch_size
+    outs:
+    - models:
+        cache: true
+        persist: true
+    metrics:
+    - mlruns:
+        cache: false
