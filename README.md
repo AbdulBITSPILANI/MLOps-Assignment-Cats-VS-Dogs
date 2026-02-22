@@ -1,595 +1,123 @@
-# Cats vs Dogs MLOps Pipeline
+Cats vs Dogs – End-to-End MLOps Pipeline
+Group Number: 48
+JAISINGHANI ANJALI – 2024aa05370
 
-End-to-end MLOps pipeline for binary image classification using open-source tools.
+JOKARE MAHESH SHIVANAND – 2024aa05366
 
-## Dataset Source
+MOHAMED ASHIK M Z – 2024aa05144
 
-**Dataset**: Kaggle Cats vs Dogs Dataset
-- **Source**: https://www.kaggle.com/datasets/salader/dogs-vs-cats
-- **Description**: 25,000 images of cats and dogs for binary classification
-- **Classes**: Cat, Dog (2 classes)
-- **Image Size**: Various sizes, resized to 224x224
-- **Format**: RGB images in JPG format
+SHA ABDUL KHUDUS – 2024aa05754
 
-## Project Overview
+VIDHI MITTAL – 2024aa05684
+Project Overview
+This project demonstrates a complete end-to-end MLOps pipeline for a binary image classification task (Cats vs Dogs).
+The objective was not just to train a model, but to build a structured and reproducible workflow that covers the full lifecycle of a machine learning system — from data handling and model training to deployment, testing, and monitoring.
+The pipeline includes:
+Data preprocessing and model training
+Reproducible experiments using DVC
+A containerized FastAPI inference service
+CI/CD integration with GitHub Actions
+Monitoring using Prometheus and Grafana
+Post-deployment validation and smoke testing
+The focus of this assignment is production-readiness and reproducibility.
+Dataset
+Source: Kaggle – Dogs vs Cats
+https://www.kaggle.com/datasets/salader/dogs-vs-cats
+Dataset details:
+25,000 RGB images
+Binary classification: Cat vs Dog
+Images resized to 224x224
+Data split:
+80% Training
+10% Validation
+10% Testing
+Data augmentation applied to improve generalization
+The dataset is tracked using DVC to ensure reproducibility of the pipeline.
+Project Structure
+MLOPS ASSIGNMENT 2
+│
+├── .github/workflows/ci-cd.yml     # CI/CD workflow
+├── data/                           # Dataset (tracked with DVC)
+├── models/
+│   └── best_model.pth              # Trained model
+├── src/
+│   ├── data/                       # Data preprocessing logic
+│   ├── models/                     # CNN architecture
+│   ├── training/                   # Training pipeline
+│   └── inference/                  # FastAPI inference service
+├── tests/                          # Unit tests
+├── monitoring/                     # Prometheus & Grafana config
+├── docker-compose.yml              # Multi-service deployment
+├── Dockerfile                      # Container definition
+├── requirements.txt
+├── requirements-docker.txt
+├── smoke_tests.py                  # API smoke tests
+├── model_monitor.py                # Model performance checks
+├── config.json                     # Training configuration
+└── dvc.yaml                        # Reproducible pipeline definition
+Model Details
+Model Architecture: Improved CNN
 
-This project demonstrates a complete MLOps pipeline covering:
-- **M1**: Model Development & Experiment Tracking
-- **M2**: Model Packaging & Containerization  
-- **M3**: CI Pipeline for Build, Test & Image Creation
-- **M4**: CD Pipeline & Deployment
-- **M5**: Monitoring, Logs & Final Submission
+Classes: 2 (Cat, Dog)
 
-## Project Structure
+Input Size: 224x224 RGB
 
-```
-├── data/                   # Dataset and processed data
-│   ├── raw/               # Raw dataset (DVC tracked)
-│   └── processed/          # Processed dataset for training
-├── src/                    # Source code
-│   ├── data/              # Data processing scripts
-│   ├── models/            # Model definitions
-│   ├── training/          # Training scripts
-│   └── inference/         # Inference service
-├── tests/                  # Unit tests
-├── mlruns/                # MLflow experiment tracking
-├── monitoring/             # Monitoring configurations
-│   ├── grafana/          # Grafana dashboards
-│   └── prometheus.yml    # Prometheus config
-├── k8s/                   # Kubernetes manifests
-├── .github/workflows/       # GitHub Actions CI/CD
-├── .dvc/                  # DVC configuration
-├── .git/                  # Git versioning
-├── docker-compose.yml       # Local deployment
-├── dvc.yaml              # DVC pipeline
-├── deploy.py             # Deployment script
-├── smoke_tests.py        # Smoke tests
-├── model_monitor.py      # Model performance monitoring
-├── requirements.txt       # Dependencies (version pinned)
-└── config.json          # Model configuration
-```
+Model Size: 29.4 MB
 
-## Quick Start
+Training Device: CPU
+Performance Metrics
+Overall Accuracy: 80.00%
 
-### 1. Clone and Setup
-```bash
-git clone https://github.com/yourusername/cats-dogs-mlops.git
-cd cats-dogs-mlops
-pip install -r requirements.txt
-```
+Cat Accuracy: 82.00%
 
-### 2. Initialize DVC (first time only)
-```bash
-dvc init
-dvc remote add -d origin s3://my-bucket/mlops-data
-dvc push
-```
+Dog Accuracy: 78.00%
+Training Configuration
+Epochs: 25
 
-### 3. Train Model
-```bash
-# Train with MLflow tracking
-python src/training/train.py --config config.json
+Learning Rate: 0.0001
 
-# Or use DVC pipeline
+Batch Size: 16
+
+Weight Decay: 1e-05
+All training settings are controlled using config.json.
+Reproducible Training with DVC
+The project uses DVC to make the training pipeline reproducible.
+To execute the pipeline:
 dvc repro
-```
-
-### 4. Deploy Locally
-```bash
-# Automated deployment with smoke tests
-python deploy.py --type docker
-
-# Or manual deployment
-docker-compose up --build
-```
-
-### 5. Deploy to Kubernetes
-```bash
-# Deploy to K8s cluster
-python deploy.py --type k8s
-
-# Or manual deployment
-kubectl apply -f k8s/
-```
-
-## Testing
-
-### Run Unit Tests
-```bash
-# Run all tests with coverage
-pytest tests/ --cov=src --cov-report=html
-
-# Run specific test categories
-pytest tests/ -m unit
-pytest tests/ -m integration
-```
-
-### Run Smoke Tests
-```bash
-# After deployment
-python smoke_tests.py
-
-# With custom API URL
-python smoke_tests.py --url http://your-domain.com
-```
-
-### Model Performance Monitoring
-```bash
-# Test with known images
-python model_monitor.py --test-dir data/processed/test
-
-# Generate performance report
-python model_monitor.py --report
-
-# Check for model drift
-python model_monitor.py --check-drift
-```
-
-## Monitoring & Observability
-
-### Access Dashboards
-- **API Service**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/docs
-- **Grafana Dashboard**: http://localhost:3000 (admin/admin)
-- **Prometheus Metrics**: http://localhost:9090
-- **MLflow Tracking**: http://localhost:5000
-
-### Key Metrics Tracked
-- Inference request rate
-- Prediction latency (50th, 95th percentile)
-- Model accuracy over time
-- Prediction confidence distribution
-- System health status
-
-## How to Train
-
-### Prerequisites
-- Python 3.9+
-- PyTorch installed
-- Dataset downloaded and processed
-
-### Training Methods
-
-#### Method 1: Direct Training with MLflow
-```bash
-# Train model with experiment tracking
+This will run the defined stages and generate the trained model at:
+models/best_model.pth
+You can also train directly using:
 python src/training/train.py --config config.json
-
-# Train with custom parameters
-python src/training/train.py --config config.json --epochs 50 --lr 0.001
-```
-
-#### Method 2: DVC Pipeline Training
-```bash
-# Run complete DVC pipeline
-dvc repro
-
-# Run specific stage
-dvc repro train
-
-# Force re-run with changes
-dvc repro --force
-```
-
-### Training Configuration
-The model training uses the following parameters from `config.json`:
-```json
-{
-  "num_epochs": 25,
-  "learning_rate": 0.0001,
-  "batch_size": 16,
-  "weight_decay": 1e-5,
-  "target_size": [224, 224],
-  "device": "cpu"
-}
-```
-
-### Training Outputs
-- **Model**: `models/best_model.pth` (PyTorch checkpoint)
-- **Metrics**: `model_performance.json` (accuracy, loss curves)
-- **MLflow**: `mlruns/` directory with experiment tracking
-- **Plots**: `models/plots/` directory with training curves
-
-### Model Architecture
-- **Type**: Improved CNN with batch normalization
-- **Layers**: Conv2d → BatchNorm → ReLU → MaxPool → AdaptiveAvgPool
-- **Output**: 2 classes (cat, dog) with softmax
-- **Performance**: 82.8% test confidence
-
-## How to Run MLflow
-
-### Start MLflow Tracking Server
-```bash
-# Method 1: Using Docker Compose (recommended)
-docker-compose up mlflow
-
-# Method 2: Standalone MLflow
-mlflow server \
-  --host 0.0.0.0 \
-  --port 5000 \
-  --backend-store-uri sqlite:///mlflow.db \
-  --default-artifact-root ./mlruns
-```
-
-### Access MLflow UI
-- **Web Interface**: http://localhost:5000
-- **API**: http://localhost:5000/api
-- **Experiments**: View all training runs
-- **Artifacts**: Download model checkpoints and plots
-
-### MLflow Integration
-The training script automatically:
-- Logs parameters (learning rate, batch size, epochs)
-- Tracks metrics (accuracy, loss)
-- Saves model artifacts (.pth files)
-- Records training curves and confusion matrices
-
-## How to Build Docker
-
-### Prerequisites
-- Docker installed
-- Docker Compose installed
-
-### Build Methods
-
-#### Method 1: Docker Compose (Recommended)
-```bash
-# Build and start all services
+Running the Inference Service
+To build and start the full system locally:
 docker-compose up --build
-
-# Build without starting
-docker-compose build
-
-# Rebuild specific service
-docker-compose build inference
-```
-
-#### Method 2: Direct Docker Build
-```bash
-# Build image manually
-docker build -t cats-dogs-mlops:latest .
-
-# Build with custom tag
-docker build -t yourusername/cats-dogs-mlops:v1.0 .
-
-# Build with build arguments
-docker build --build-arg DEVICE=cpu -t cats-dogs-mlops .
-```
-
-### Docker Image Details
-- **Base Image**: python:3.9-slim
-- **Size**: ~800MB compressed
-- **Layers**: System deps → Python deps → Application code
-- **Health Check**: `/health` endpoint every 30s
-- **Ports**: 8000 (FastAPI)
-
-### Multi-stage Build
-The Dockerfile uses multi-stage builds for optimization:
-1. **Builder Stage**: Installs all dependencies
-2. **Runtime Stage**: Copies only necessary files
-3. **Result**: Smaller production image
-
-## How to Deploy
-
-### Local Deployment (Docker Compose)
-```bash
-# Automated deployment with smoke tests
-python deploy.py --type docker
-
-# Manual deployment
-docker-compose up -d
-
-# Deploy without tests
-python deploy.py --type docker --no-tests
-```
-
-### Kubernetes Deployment
-```bash
-# Deploy to Kubernetes cluster
-python deploy.py --type k8s
-
-# Manual K8s deployment
-kubectl apply -f k8s/
-
-# Check deployment status
-kubectl get pods -l app=cats-dogs-inference
-```
-
-### Deployment Options
-- **Docker Compose**: Local development and testing
-- **Kubernetes**: Production deployment with scalability
-- **Rollback**: `python deploy.py --rollback` for quick rollback
-
-### Service Endpoints
-After deployment, the following endpoints are available:
-- **Health Check**: `GET /health`
-- **Prediction**: `POST /predict`
-- **Metrics**: `GET /metrics`
-- **Documentation**: `GET /docs` (Swagger UI)
-
-## How CI/CD Works
-
-### GitHub Actions Workflow
-The CI/CD pipeline (`.github/workflows/ci-cd.yml`) triggers on:
-- **Push to main/develop**: Full pipeline
-- **Pull Request to main**: Testing only
-
-### Pipeline Stages
-
-#### Stage 1: Testing
-```yaml
-test:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Run unit tests
-      run: pytest tests/ --cov=src --cov-report=xml
-    - name: Upload coverage
-      uses: codecov/codecov-action@v3
-```
-
-#### Stage 2: Build and Push
-```yaml
-build-and-push:
-  needs: test
-  steps:
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
-    
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        push: true
-        tags: |
-          ${{ secrets.DOCKER_USERNAME }}/cats-dogs-mlops:latest
-          ${{ secrets.DOCKER_USERNAME }}/cats-dogs-mlops:${{ github.sha }}
-```
-
-### Docker Image Push Step Confirmation
-
-The CI/CD pipeline includes **automated Docker image publishing**:
-
-1. **Authentication**: Logs into Docker Hub using secrets
-2. **Build**: Creates Docker image with multi-stage build
-3. **Tag**: Tags with `latest` and git SHA for versioning
-4. **Push**: Publishes to Docker Hub registry
-5. **Verification**: Image available for deployment
-
-**Registry**: `docker.io/yourusername/cats-dogs-mlops`
-**Tags**: 
-- `latest` (stable version)
-- `{git-sha}` (specific version)
-
-#### Stage 3: Deployment
-```yaml
-deploy:
-  needs: build-and-push
-  steps:
-    - name: Deploy to production
-      run: |
-        echo "Deploying new image version..."
-        kubectl set image deployment/cats-dogs-inference \
-          cats-dogs-inference=yourusername/cats-dogs-mlops:${{ github.sha }}
-    
-    - name: Run smoke tests
-      run: |
-        python smoke_tests.py --fail-on-error
-```
-
-### Pipeline Security
-- **Secrets Management**: Docker Hub credentials in GitHub Secrets
-- **Access Control**: Deployments only from main branch
-- **Validation**: Smoke tests must pass for deployment
-- **Rollback**: Automatic rollback on failure
-
-## Smoke Tests and Pipeline Failure
-
-### Smoke Test Implementation
-The `smoke_tests.py` script ensures deployment quality:
-
-```python
-def test_health_endpoint(self):
-    """Test health check endpoint"""
-    response = requests.get(f"{self.base_url}/health", timeout=30)
-    if response.status_code != 200:
-        raise Exception("Health check failed")
-
-def test_prediction_endpoint(self):
-    """Test prediction endpoint"""
-    # Test actual prediction functionality
-    response = requests.post(f"{self.base_url}/predict", files=files)
-    if response.status_code != 200:
-        raise Exception("Prediction endpoint failed")
-```
-
-### Pipeline Failure on Endpoint Failure
-
-**CI/CD Integration**:
-```yaml
-- name: Run smoke tests
-  run: |
-    python smoke_tests.py --fail-on-error
-```
-
-**Failure Behavior**:
-- **Health Check Failure**: Pipeline exits with error code 1
-- **Prediction Failure**: Deployment marked as failed
-- **Monitoring Failure**: Rollback triggered automatically
-- **Overall Failure**: CD pipeline stops, prevents bad deployment
-
-**Exit Codes**:
-- **0**: All tests passed, deployment successful
-- **1**: One or more tests failed, deployment failed
-
-### Smoke Test Coverage
-- ✅ API Health Check (`/health`)
-- ✅ Prediction Endpoint (`/predict`)
-- ✅ Metrics Collection (`/metrics`)
-- ✅ Grafana Dashboard (localhost:3000)
-- ✅ Prometheus Metrics (localhost:9090)
-- ✅ MLflow Tracking (localhost:5000)
-
-**Any endpoint failure causes the entire pipeline to fail, ensuring production reliability.**
-  2. Build Docker image
-  3. Push to container registry
-  4. Deploy to production (main branch only)
-  5. Run smoke tests
-
-### Manual Deployment Commands
-```bash
-# Deploy with testing
-python deploy.py --type docker
-
-# Deploy without testing
-python deploy.py --type k8s --no-tests
-
-# Rollback deployment
-python deploy.py --rollback
-```
-
-## MLOps Components Coverage
-
-### M1: Model Development & Experiment Tracking
-- Git for source code versioning
-- DVC for dataset versioning
-- Improved CNN model (82.8% accuracy)
-- MLflow experiment tracking
-- Model serialization (.pth format)
-
-### M2: Model Packaging & Containerization
-- FastAPI inference service
-- Health check and prediction endpoints
-- Version-pinned dependencies
-- Docker containerization
-- Environment specification
-
-### M3: CI Pipeline
-- Unit tests for all components
-- GitHub Actions CI/CD workflow
-- Automated testing with pytest
-- Docker image building and publishing
-- Test coverage reporting
-
-### M4: CD Pipeline & Deployment
-- Docker Compose deployment
-- Kubernetes manifests
-- Automated deployment script
-- Post-deployment smoke tests
-- Health check integration
-
-### M5: Monitoring & Final Submission
-- Prometheus metrics collection
-- Grafana dashboard
-- Request/response logging
-- Model performance monitoring
-- Model drift detection
-- Complete artifact package
-
-## Model Performance
-
-### Training Results
-- **Architecture**: Improved CNN with batch normalization
-- **Training Accuracy**: 78.75%
-- **Validation Accuracy**: 65.00%
-- **Inference Confidence**: 82.8% (test image)
-- **Model Size**: ~15MB parameters
-
-### Production Metrics
-- **API Response Time**: <100ms average
-- **Availability**: 99.9%+ uptime
-- **Prediction Accuracy**: Tracked in real-time
-- **Model Drift**: Automated detection
-
-## Configuration
-
-### Model Parameters (config.json)
-```json
-{
-  "num_epochs": 25,
-  "learning_rate": 0.0001,
-  "batch_size": 16,
-  "weight_decay": 1e-5,
-  "target_size": [224, 224]
-}
-```
-
-### Environment Variables
-- `MODEL_PATH`: Path to trained model
-- `DEVICE`: cpu/cuda (auto-detected)
-- `MLFLOW_TRACKING_URI`: MLflow server URL
-
-## Production Deployment
-
-### Docker Registry
-```bash
-# Build and push
-docker build -t yourusername/cats-dogs-mlops:latest .
-docker push yourusername/cats-dogs-mlops:latest
-```
-
-### Kubernetes
-```bash
-# Apply all manifests
-kubectl apply -f k8s/
-
-# Check deployment status
-kubectl get pods -l app=cats-dogs-inference
-```
-
-### Environment Setup
-- **Development**: Docker Compose
-- **Staging**: Kubernetes (minikube)
-- **Production**: Kubernetes (EKS/GKE/AKS)
-
-## Troubleshooting
-
-### Common Issues
-1. **Model loading fails**: Check `models/best_model.pth` exists
-2. **API not responding**: Verify Docker containers are running
-3. **Tests failing**: Check dependencies with `pip install -r requirements.txt`
-4. **Monitoring not working**: Ensure Grafana/Prometheus are accessible
-
-### Health Checks
-```bash
-# Check all services
+Once running, the following services are available:
+API: http://localhost:8000
+Swagger UI: http://localhost:8000/docs
+Prometheus: http://localhost:9090
+Grafana: http://localhost:3000
+MLflow: http://localhost:5000
+API Endpoints
+Health Check:
 curl http://localhost:8000/health
-curl http://localhost:3000
-curl http://localhost:9090
-curl http://localhost:5000
-```
-
-## Development
-
-### Code Quality
-```bash
-# Format code
-black src/ tests/
-isort src/ tests/
-
-# Type checking
-mypy src/
-```
-
-### Adding New Features
-1. Update tests in `tests/`
-2. Update model in `src/models/`
-3. Update CI/CD in `.github/workflows/`
-4. Update monitoring in `monitoring/`
-5. Update documentation
-
-## License
-
-MIT License - see LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Make changes with tests
-4. Submit pull request
-
----
-
-**Complete MLOps Pipeline Score: 95/100**
+Prediction:
+curl -X POST -F "file=@test_image_smoke.jpg" http://localhost:8000/predict
+The API accepts an image file and returns the predicted class (Cat or Dog).
+Testing
+The project includes both unit tests and smoke tests.
+Run unit tests:
+pytest
+Run smoke tests:
+python smoke_tests.py
+These ensure the API is working correctly and the model returns valid predictions.
+Monitoring
+Monitoring configuration is available inside the monitoring/ directory.
+The system integrates:
+Prometheus for metrics collection
+Grafana for visualization
+model_monitor.py for checking model performance after deployment
+This ensures the service can be validated even after deployment.
+Summary
+This project demonstrates a structured and reproducible MLOps workflow for a real-world image classification task. It integrates training, tracking, deployment, monitoring, and testing into a single cohesive pipeline.
+The focus was on building something closer to a production-ready system rather than just training a model.
+ 
