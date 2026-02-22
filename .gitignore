@@ -21,9 +21,10 @@ wheels/
 *.egg
 MANIFEST
 
-# PyTorch
+# PyTorch (ignore all models EXCEPT the trained deployment model)
 *.pth
 *.pt
+!models/best_model.pth
 
 # TensorFlow
 *.h5
@@ -32,19 +33,19 @@ MANIFEST
 # MLflow
 mlruns/
 mlartifacts/
+mlflow.db
 
 # DVC
 .dvc/cache/
 .dvc/tmp/
 
-# Data
+# Data (ignore large datasets)
 data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-# Models
-models/
+# Other model formats
 *.pkl
 *.joblib
 
@@ -74,9 +75,3 @@ htmlcov/
 
 # Docker
 .dockerignore
-/models
-
-.dvc/cache/
-mlruns/
-mlflow.db
-__pycache__/
